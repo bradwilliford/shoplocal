@@ -65,7 +65,7 @@
             </div>
           </div>
         {% elif business.mapsEmbedPlaceId %}
-          <iframe class="business-connect" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=place_id:{{business.mapsEmbedPlaceId}}&key=AIzaSyDjH29NYJ3L5a8aaUmkZV4u5wKVkZ2GRA8" allowfullscreen></iframe>
+          <iframe class="business-connect" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=place_id:{{business.mapsEmbedPlaceId}}&key={{ s('maps-api-key') }}" allowfullscreen></iframe>
         {% endif %}
 
     </div>

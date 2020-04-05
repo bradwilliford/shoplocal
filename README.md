@@ -1,21 +1,34 @@
-# shoplocal
-Shop Local
+# Shop Local
 
+Code for https://shoplocal.se/.
 
 ## Running
 
-Setup App Engine runtime using instructions on https://cloud.google.com/appengine/docs/standard/python3/quickstart.
+1. Setup App Engine runtime using instructions on https://cloud.google.com/appengine/docs/standard/python3/quickstart.
 
+
+2. Create an isolated Python environment
+
+```
+python3 -m venv env
+source env/bin/activate
+```
+
+3. The App Engine JSON service account config should be added to `config/shoplocalese.json`.
+
+
+4. Get requirements
+
+```
+pip install  -r requirements.txt
+
+```
+
+5. Start the server
+
+```
 Start local devleopment environment:
 
 ```
-# Create an isolated Python environment
-python3 -m venv env
-source env/bin/activate
-
-# Get requirements
-pip install  -r requirements.txt
-
-# Start the server
 python main.py
 ```
