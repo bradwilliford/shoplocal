@@ -1,0 +1,38 @@
+{% extends "templates/dialog.html" %}
+
+{% block content %}
+  <h3>{{ s('business-contact') }}</h3>
+  
+  <h2>{{ business.businessName }}</h2>
+
+  {% if business.ownerVerified %}
+
+  <div class="business-person">
+    <img class="business-person-photo" src="https://storage.googleapis.com/shoplocalse.appspot.com/profile/{{business.profiledPersonPhoto}}" alt="">
+    <img class="business-person-icon"  src="/static/images/icons/video.svg" alt="">
+  </div>
+
+  <p>{{ s('business-connect-description') }}</p>
+
+  <div class="business-connect-actions">
+    <a href="https://api.whatsapp.com/send?phone=" style="background-image: url(/static/images/icons/whatsapp.svg)" class="button icon">{{ s('business-whatsapp') }}</a>
+    <a href="#" style="background-image: url(/static/images/icons/facetime.svg)" class="button icon">{{ s('business-facetime') }}</a>
+  </div>
+  <div class="business-connect-actions">
+    <a href="#" style="background-image: url(/static/images/icons/zoom.svg)" class="button icon">{{ s('business-zoom') }}</a>
+    <a href="#" style="background-image: url(/static/images/icons/messenger.svg)" class="button icon">{{ s('business-messenger') }}</a>
+  </div>
+  <div class="business-connect-actions">
+    <a href="skype:" style="background-image: url(/static/images/icons/skype.svg)" class="button icon">{{ s('business-skype') }}</a>
+    <a href="#" style="background-image: url(/static/images/icons/phone.svg)" class="button icon">{{ s('business-phone') }}</a>
+
+  </div>
+
+  <p>{{ s('business-connect-additional-options') }}</p>
+  {% endif %}
+
+  <div class="business-connect-actions">
+    <a target="_blank" href="{{business.website}}" style="background-image: url(/static/images/icons/web.svg)" class="button icon">{{ s('business-website') }}</a>
+    <a target="_blank" href="{{business.mapsLink}}" style="background-image: url(/static/images/icons/maps.svg)" class="button icon">{{ s('business-maps-link') }}</a>
+  </div>
+{% endblock %}

@@ -1,0 +1,9 @@
+{% extends "templates/dialog.html" %}
+
+{% block content %}
+  <h4>{{ s('business-transaction') }}</h4>
+  <h2>{{ business.businessName }}</h2>
+
+  <div class="qr-code">{{ business.swishQrCode }}</div>
+  <p>{{ business.swishNumber }}
+{% endblock %}

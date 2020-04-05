@@ -1,0 +1,268 @@
+body {
+  background: #f8f8f8;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, ol, a, select {
+  font-family: "Helvetica Neue","Helvetica","Arial",sans-serif;
+  line-height: 1.4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 500;
+}
+
+h2 {
+  font-size: 38px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+p {
+  font-weight: 300;
+  font-size: 14px;
+}
+
+a {
+  text-decoration: none;
+  color: #ED4C5C;
+}
+
+.header {
+  text-align: center;
+}
+
+.header p {
+  font-size: 18px;
+}
+
+.logo-container {
+  background: #fff;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: -40px;
+}
+
+.hero-image {
+  background-image: url(/static/images/hero.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 160px;
+}
+
+.hero {
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  margin: 30px auto;
+}
+
+
+.business-overview {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 50px 20px 50px;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid #ddd;
+}
+
+.business-details {
+  flex-basis: 70%;
+}
+
+.business-hours {
+  margin: 10px 0;
+  color: #999;
+}
+
+.business-actions {
+  margin-top: 20px;
+  display: flex;
+}
+
+.button {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px #eee;
+  padding: 15px 25px;
+  margin: 12px 15px 12px 0;
+  display: inline-block;
+  text-align: left;
+  color: #555;
+}
+
+.button:hover,
+.button:active {
+  color: #000;
+}
+
+.button.primary {
+  background-color: #8CC272;
+  color: #fff;
+}
+
+.button.icon {
+  background-size: 25px 25px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  padding-left: 55px;
+  box-sizing: border-box;
+}
+
+.button.add-business {
+  position: absolute;
+  top: 3px;
+  right: 10px;
+}
+
+.button.location {
+  position: absolute;
+  top: 3px;
+  left: 10px;
+}
+
+.button.disabled {
+  box-shadow: none;
+}
+
+.business-connect {
+  flex-basis: 30%;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px #eee;
+  margin-left: 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.business-connect h3 {
+  margin-bottom: 5px;
+}
+
+.business-connect p {
+  color: #666;
+  font-size: 12px;
+}
+
+.business-connect iframe {
+  width: 100%;
+  height: 300px;
+}
+
+.business-connect-contents {
+  padding: 25px 15px;
+}
+
+.business-photo {
+  background-color: #f1f1f1;
+  background-position: center;
+  background-size: cover;
+  height: 130px;
+}
+
+.business-person {
+  position: relative;
+  display: inline-block;
+}
+
+.business-person-photo {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+}
+
+.business-person-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  width: 30px;
+}
+
+.business-connect-actions {
+  display: flex;
+  max-width: 500px;
+  margin: auto;
+}
+
+.business-connect-actions > * {
+  flex-basis: 50%;
+}
+
+.business-connect-actions.secondary {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid #ddd;
+}
+
+.featured-products {
+  margin-top: 20px;
+  display: flex;
+}
+
+.featured-product {
+  height: 140px;
+  flex-basis: 33%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px #eee;
+  margin-right: 10px;
+}
+
+.dialog {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 6px #eee;
+  margin: 30px auto;
+  max-width: 1000px;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.dialog p {
+  margin-top: 15px;
+}
+
+.qr-code {
+  max-width: 350px;
+  margin: 20px auto;
+}
+
+.verified {
+  width: 14px;
+  top: 2px;
+  position: relative;
+  padding-left: 2px;
+}
+
+select {
+  background: #EF67CB;
+  border-radius: 8px;
+  box-shadow: 2px 2px 6px #eee;
+  padding: 15px 65px 15px 25px;
+  margin: 20px 15px 12px 0;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ appearance: none;
+ color: #fff;
+ border: none;
+ font-size: 18px;
+ position: relative;
+ background-image: url(/static/images/arrow.svg);
+ background-position: right center;
+ background-size: 50px;
+ background-repeat: no-repeat;
+}
+
+select:focus {
+  outline: none;
+}

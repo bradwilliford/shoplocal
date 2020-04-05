@@ -1,0 +1,76 @@
+{% extends "templates/base.html" %}
+
+{% block title %}{{ s('hero-header') }}{% endblock %}
+{% block description %}{{ s('hero-description') }}{% endblock %}
+
+{% block hero_content %}
+<div>
+  <select onchange="filter()" id="filter">
+    <option value="">All categories</option>
+    {% for category in categories %}
+      <option {% if filter == category.id %}selected{% endif %} value="{{category.id}}">{{category.name}}</option>
+    {% endfor %}
+  </select>
+</div>
+
+  <script>
+    function filter() {
+      let filterValue = document.getElementById('filter').value;
+      if (filterValue != '') {
+        window.location = '/?filter=' + document.getElementById('filter').value;
+      } else {
+        window.location = '/';
+      }
+
+    }
+  </script>
+{% endblock %}
+
+{% block content %}
+
+
+  {% for business in businesses %}
+    <div class="business-overview">
+      <div class="business-details">
+        <h2>{{business.businessName}}</h2>
+        <p>{{business.promotionalDescription}}</p>
+
+        <div class="business-actions">
+          <a target="_blank" href="/connect?id={{business.id}}" style="background-image: url(/static/images/icons/connect.svg)" class="button primary icon">{{ s('business-contact') }}</a>
+          {% if business.ownerVerified %}<a target="_blank" href="/transaction?id={{business.id}}" style="background-image: url(/static/images/icons/swish.svg)" class="button icon">{{ s('business-transaction') }}</a>{% endif %}
+        </div>
+
+
+        {% if business.ownerVerified %}
+        <div class="featured-products">
+          {% for featuredProduct in business.featuredProducts %}
+          <div class="featured-product" style="background-image: url(https://storage.googleapis.com/shoplocalse.appspot.com/featured-products/{{featuredProduct}})">
+          </div>
+        {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+
+        {% if business.ownerVerified %}
+          <div class="business-connect">
+            <div class="business-photo" style="background-image: url(https://storage.googleapis.com/shoplocalse.appspot.com/featured-products/{{business.featuredProducts[0]}})"></div>
+            <div class="business-connect-contents">
+                <div class="business-person">
+                  <img class="business-person-photo" src="https://storage.googleapis.com/shoplocalse.appspot.com/profile/{{business.profiledPersonPhoto}}" alt="">
+                  <img class="business-person-icon"  src="/static/images/icons/video.svg" alt="">
+                </div>
+                <h3>{{business.profiledPerson}} <img src="/static/images/icons/verified.svg" alt="Verified" class="verified"></h3>
+              <p>{{business.profiledPersonDescription}}</p>
+            </div>
+          </div>
+        {% elif business.mapsEmbedPlaceId %}
+          <iframe class="business-connect" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=place_id:{{business.mapsEmbedPlaceId}}&key=AIzaSyDjH29NYJ3L5a8aaUmkZV4u5wKVkZ2GRA8" allowfullscreen></iframe>
+        {% endif %}
+
+    </div>
+
+<!--    
+      <p>{{business.displayNeighborhood}}</p> -->
+  {% endfor %}
+{% endblock %}
