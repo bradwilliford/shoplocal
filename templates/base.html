@@ -12,25 +12,31 @@
   <body>
     <div>
       <div class="header">
+
         <div class="logo-container">
           <a href="/"><img class="logo" alt="{{ s('site-title') }}" src="/static/images/logo.svg"></a>
         </div>
 
+        <div class="hero-image"></div>
+
+
         <a style="background-image: url(/static/images/icons/location.svg)" class="button icon disabled location">Göteborg</a>
 
-        <a target="_blank" href="https://forms.gle/wMAKcQEomEWkaffV8" style="background-image: url(/static/images/icons/plus.svg)" class="button icon add-business">{{ s('add-business-button') }}</a>
-
-        <div class="hero-image"></div>
         <div class="hero">
           <h1>{% block title %}{% endblock %}</h1>
           <p>{% block description %}{% endblock %}</p>
           {% block hero_content %}
           {% endblock %}
+
+          <a target="_blank" href="https://forms.gle/wMAKcQEomEWkaffV8" style="background-image: url(/static/images/icons/plus.svg)" class="button icon add-business">{{ s('add-business-button') }}</a>
+
         </div>
       </div>
     </div>
 
     {% block content %}
     {% endblock %}
+
+
   </body>
 </html>

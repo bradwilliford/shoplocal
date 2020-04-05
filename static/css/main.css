@@ -40,14 +40,14 @@ a {
   font-size: 18px;
 }
 
-.logo-container {
-  background: #fff;
-}
-
 .logo {
   width: 120px;
   height: 120px;
   margin-bottom: -40px;
+}
+
+.logo-container {
+  background: #fff;
 }
 
 .hero-image {
@@ -131,6 +131,7 @@ a {
 
 .button.disabled {
   box-shadow: none;
+  background-color: transparent;
 }
 
 .business-connect {
@@ -265,4 +266,42 @@ select {
 
 select:focus {
   outline: none;
+}
+
+@media only screen and (max-width: 900px) {
+  .business-overview {
+    flex-direction: column;
+  }
+
+  .business-details,
+  .business-connect {
+    flex-basis: 100%;
+    margin: 20px 0 0;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .button.add-business {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .button.location {
+    position: relative;
+    top: 0;
+    right: 0;
+  }
+
+  .hero {
+    padding: 0 20px;
+    margin: 10px 0;
+  }
+
 }
